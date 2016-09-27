@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>React</title>
+  </head>
+  <body>
+    <h1> React without Babel</h1>
+  	<div id="mydiv"></div>
+
+    <script src="https://fb.me/react-0.14.7.js"></script>
+    <script src="https://fb.me/react-dom-0.14.7.js"></script>
+  	<script type="text/javascript"><!-- Notice: javascript and not babel -->
+    ReactDOM.render(
+      React.createElement('h5', null, 'Hello React!'),<!-- Notice: This line changes -->
+      document.getElementById('mydiv')
+    );
+  	</script>
+
+  </body>
+</html>

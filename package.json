@@ -1,0 +1,19 @@
+{
+  "name": "react-day1",
+  "version": "1.0.0",
+  "description": "react js day 1 code",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "reactjs"
+  ],
+  "author": "Akhil",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
