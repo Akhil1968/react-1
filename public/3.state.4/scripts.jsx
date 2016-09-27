@@ -38,12 +38,14 @@ var CommentBox = React.createClass({
 // CommentList
 var CommentList = React.createClass({
   render: function() {
-    var commentHTMLNodes = this.props.data.map(function(comment) {
+    //Javascript's map() method creates a new array with the results of calling a function for every array element.
+    //The map() method calls the provided function once for each element in an array, in order.
+    var commentHTMLNodes = this.props.data.map(function(aComment) {
           return (
             <Comment
-              author={comment.author}
-              id={comment.id}
-              book={comment.text}
+              author={aComment.author}
+              key={aComment.id}
+              book={aComment.text}
               >
             </Comment>
           );
@@ -63,7 +65,7 @@ var Comment = React.createClass({
     return (
       <div>
         <h5>
-          {this.props.id}&nbsp;{this.props.author}&nbsp;{this.props.book}
+          {this.props.author}---{this.props.book}
         </h5>
       </div>
     );
