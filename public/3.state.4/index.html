@@ -1,23 +1,55 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <title>React Comment Box</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <meta charset="UTF-8" />
+    <title>React</title>
   </head>
   <body>
-    <div id="content" class="container"></div>
+    <h1>Controlled Input</h1>
+    <div id="mydiv"></div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
-    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
-    <script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
-    <script src="https://unpkg.com/jquery@3.1.0/dist/jquery.min.js"></script>
-    <script src="https://unpkg.com/remarkable@1.6.2/dist/remarkable.min.js"></script>
+    <script src="https://fb.me/react-0.14.7.js"></script>
+    <script src="https://fb.me/react-dom-0.14.7.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+  	<script type="text/babel">
+    var Comp = React.createClass({
+      getInitialState: function() {
+        return { value: "" }
+      },
+      handleChange: function(event) {
+        this.setState({
+          value: event.target.value
+        });
+      },
+      render: function() {
+          return (
+            <div>
+              This input text allows typing: &nbsp;&nbsp;
+              <input type="text" placeholder="You can type here" value={this.state.value} onChange={this.handleChange} />
+              <br/>
+              But this does not:&nbsp;&nbsp;
+              <input type="text" placeholder="try typing here"  value="" />
+              <h4>Reasoning:</h4>
+              <p>
+              React only allows data to flow in one direction- from model or state to view.
+              The view cannot update the state of the component directly.
+              </p>
+              <h4>Solution:</h4>
+              <p>
+              Attach a function to the input’s onChange event
+              and make the function update the components state with the new value of input.
+              This causes the component to re-render with the new value.
+              </p>
+            </div>
+          );
+      }
+    });//mycomp
 
-    <script type="text/babel" src="scripts.jsx"></script>
+  	ReactDOM.render(
+  	  <Comp/>,
+  	  document.getElementById('mydiv')
+  	);
+  	</script>
+
   </body>
 </html>
