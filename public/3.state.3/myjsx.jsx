@@ -7,7 +7,7 @@
         },
 
         componentDidMount() {
-          this.timer = setInterval(this.tick, 1000);
+          setInterval(this.tick, 1000);
         },
 
         componentWillUnmount() {

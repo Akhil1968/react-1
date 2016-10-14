@@ -44,8 +44,6 @@ var ComponentOne = React.createClass({
             Change</button>
         </div>
 
-
-
         <div>
           <h5>
             Display state change of rendering
@@ -59,7 +57,6 @@ var ComponentOne = React.createClass({
             &nbsp;{this.state.input_text}
           </form>
         </div>
-
 
       <ComponentTwo
             propString="this is string from ComponentOne"

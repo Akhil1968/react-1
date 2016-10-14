@@ -1,4 +1,4 @@
-var Counter = React.createClass({
+var Counter = React.createClass({  // class Counter extends React.Component in es6
   incrementCount: function(){
     this.setState({
       count: this.state.count + 1
